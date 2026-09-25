@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedTroubleshoot AI</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            medical: {
+              green: '#10b981',
+              emerald: '#059669',
+              cyan: '#06b6d4',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .liquid-glass {
+        background: rgba(var(--glass-tint), var(--glass-opacity));
+        backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+        -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+        border: 1px solid var(--glass-border);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 20px 50px rgba(0, 0, 0, 0.12);
+        border-radius: 24px;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .liquid-glass:hover {
+        transform: translateY(-2px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+      .liquid-glass-navbar {
+        background: rgba(var(--glass-tint), calc(var(--glass-opacity) + 0.1));
+        backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(180%);
+        -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(180%);
+        border: 1px solid var(--glass-border);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 9999px;
+      }
+      .liquid-glass-input {
+        background: rgba(var(--glass-tint), calc(var(--glass-opacity) - 0.2));
+        border: 1px solid var(--glass-border);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+    }
+  </style>
+</head>
+<body class="text-slate-800 dark:text-slate-100 antialiased overflow-x-hidden min-h-screen">
+  <div id="bg-container" class="animated-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+  
+  <div id="root"></div>
+
+  <!-- React & ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Our React App -->
+  <script type="text/babel" src="app.jsx"></script>
+  
+  <script>
+    // Initialize Lucide icons (for statically rendered parts if any, but we will use lucide-react ideally.
+    // Since we are using CDN without an easy import map for lucide-react, we can just use the lucide.createIcons or raw SVG strings.
+    // Wait, with React via CDN, we can define SVG icons directly as React components to avoid external dependencies.
+  </script>
+</body>
+</html>
